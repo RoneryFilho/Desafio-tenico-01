@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      Teste técnico
+
+   </head>
+   <body>
+      <form>
+         <input type="number" id="num" title="digite um número inteiro positivo" placeholder="Número inteiro positivo">
+      </form>
+      <form onsubmit="return somaTresCinco()">
+         <input type="submit" value="Enviar">
+      </form>
+
+      <script>
+         function somaTresCinco(){
+            let number = document.getElementById("num").value;
+            let soma = 0;
+
+            number = parseFloat(number);
+
+            if (Number.isInteger(number) && number > 0) {
+               for (let i=1; i<number;i++){
+                  if ((i % 3) == 0 || (i % 5) == 0) soma += i;
+               }
+               
+               return alert (`A soma de todos os valores inteiros divisíveis por 3 ou 5 que sejam inferiores ao número ${number} é igual a: ${soma}`)
+            }else {
+               return alert('Informe penas números inteiros e maiores do que zero!');
+            }
+
+         }
+      </script>
+   </body>
+</html>
